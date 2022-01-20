@@ -109,14 +109,14 @@
 // if (numero5 % 3 === 0) {
 //     console.log("il numero e' divisibile per 3"); 
 // } 
- 
+
 // console.log("while");
 // let i = 0;
 
 // while (i <10) {
 //     console.log( i )
 //     i= i+1
-    
+
 // }
 
 // console.log("dowhile");
@@ -131,7 +131,7 @@
 // console.log("for");
 
 // for (let k = 0; k < 10; k++) {
-    
+
 //     console.log(k);
 
 // }
@@ -140,14 +140,14 @@
 // let y=10;
 
 // while ( true ) {
-    
+
 //     if (y % 7 === 0) {
 //         console.log( y )
 //         break
 //     }
 
 //     y++
-  
+
 // }
 
 
@@ -167,42 +167,46 @@
 //         if (g === "#######") {
 // break            
 //         }
-        
+
 //     }
 
 
-    // if (numero5 % 2 === 0) {
-    //     console.log("il numero e' divisibile per 2");
-    // } 
-    // if (numero5 % 3 === 0) {
-    //     console.log("il numero e' divisibile per 3"); 
-    // } 
-     
-
-    // let fizzbuzz = 1
-
-    // while (fizzbuzz<101) {
-    //     if (fizzbuzz % 15 === 0) {
-    //         console.log("FizzBuzz");
-    //     } else if (fizzbuzz % 5 === 0) {
-    //         console.log("Buzz");
-
-    //     } else if (fizzbuzz % 3 === 0) {
-    //         console.log("Fizz");
-            
-    //     }else {console.log(fizzbuzz);}
-    //     fizzbuzz++;   
-    // }
+// if (numero5 % 2 === 0) {
+//     console.log("il numero e' divisibile per 2");
+// } 
+// if (numero5 % 3 === 0) {
+//     console.log("il numero e' divisibile per 3"); 
+// } 
 
 
+// let fizzbuzz = 1
 
-    let grid =''
-    for (let i = 0; i < 8; i++) {
-        for (let j = 0; j < 8; j++) {
-            console.log(`linea ${i}, carattere ${j}`);
-            grid +='# '
+// while (fizzbuzz<101) {
+//     if (fizzbuzz % 15 === 0) {
+//         console.log("FizzBuzz");
+//     } else if (fizzbuzz % 5 === 0) {
+//         console.log("Buzz");
+
+//     } else if (fizzbuzz % 3 === 0) {
+//         console.log("Fizz");
+
+//     }else {console.log(fizzbuzz);}
+//     fizzbuzz++;   
+// }
+
+
+let grandezza = (prompt ());
+let grid = '';
+for (let i = 0; i < grandezza; i++) {
+    for (let j = 0; j < grandezza; j++) {
+        if ((i + j) % 2 === 0) {
+            grid += " "
+        } else {
+            grid += "#"
         }
-        grid+='\n'
-        
     }
-    console.log(grid)
+    grid += '\n'
+}
+console.log(grid)
+
+
