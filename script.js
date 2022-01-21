@@ -195,14 +195,32 @@
     // }
 
 
-
+    let size = (prompt())
     let grid =''
-    for (let i = 0; i < 8; i++) {
-        for (let j = 0; j < 8; j++) {
-            console.log(`linea ${i}, carattere ${j}`);
-            grid +='# '
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size; j++) {
+            if ((i + j) % 2 === 0) {
+                grid += " "
+            } else {
+                grid += "#"
+            }
+            
+          
         }
         grid+='\n'
-        
+     
     }
     console.log(grid)
+
+
+    let grid2 =''
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size; j++) {
+            let result = ((i+j) % 2 === 0) ? ' ':'#';
+            grid2 += result;
+          
+        }
+        grid2+='\n'
+     
+    }
+    console.log(grid2)
