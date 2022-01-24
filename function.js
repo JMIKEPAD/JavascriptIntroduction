@@ -248,8 +248,32 @@ function fibonacci(number) {
     if (number === 0) {
         return 1;
     }
-    
+
     return number * fibonacci(number - 1);
 }
 
 console.log(fibonacci(5));
+
+
+
+
+//fattoriale non ricorsivo
+
+
+function fattorialeNonRicorsivo(number) {
+    let result = 1
+    if (number === 0) {
+        return 1;
+    }
+    
+
+    for (let i = 1; i <= number; i++) {
+        
+        if (i === number) {
+            return number * result
+
+        }
+        result = i * result
+    }
+}
+    console.log(fattorialeNonRicorsivo(5));
