@@ -166,7 +166,7 @@ let array = [];
 
 function fib1() {
     let array = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i <= 100; i++) {
 
         if (i === 0) {
             array.push(0)
@@ -185,59 +185,95 @@ function fib1() {
 
 fib1(); //primo esercizio
 
-function fib2(numeroFib, array) {
-    for (let i = 0; i < numeroFib; i++) {
+function fib2(position) {
+    let fibn1 = 0
+    let fibn2 = 1
 
-        if (i === 0) {
-            array.push(0)
-        }
-
-        if (i === 0) {
-            array.push(1)
-        }
-
-        if (i > 1) {
-            array[i] = array[i - 1] + array[i - 2];
-            return array[i];
-        }
-
-        if (numeroFib === 0) {
-            return 0;
-        }
-
-        if (numeroFib === 1) {
-            return 1;
-        }
+    if (position === 0) {
+        return 0;
 
     }
-}
-let array2 = []
-console.log(fib2(100, array2));// secondo esercizio
+    if (position === 1) {
+        return 1;
+    }
+    for (let i = 2; i <= position; i++) {
+        let fibn = fibn1 + fibn2
 
-
-
-
-
-function trovaFib(numeroFib2, array) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === numeroFib2) {
-            return i + 1;
+        if (i === position) {
+            return fibn
         }
+        fibn2 = fibn1
+        fibn1 = fibn
     }
 }
 
-console.log(trovaFib(144, array)); // terzo esercizio
+console.log(fib2(100));// secondo esercizio
 
 
+
+
+
+function trovaFib(numero) {
+
+    let fibn1 = 0
+    let fibn2 = 1
+
+    if (numero === 0) {
+        return 0;
+
+    }
+    if (numero === 1) {
+        return 1;
+    }
+    let position = 2
+
+    while (true) {
+        let fibn = fibn1 + fibn2
+        if (fibn === numero) {
+            return position;
+        }
+        if (fibn > numero) {
+            return
+        }
+        position++
+        fibn2 = fibn1
+        fibn1 = fibn
+    }
+
+}
+
+console.log(trovaFib(144)); // terzo esercizio
 
 function fibonacci(number) {
     if (number === 0) {
-        return 0;
-    }
-    if (number === 1) {
         return 1;
     }
+
     return number * fibonacci(number - 1);
 }
 
 console.log(fibonacci(5));
+
+
+
+
+//fattoriale non ricorsivo
+
+
+function fattorialeNonRicorsivo(number) {
+    let result = 1
+    if (number === 0) {
+        return 1;
+    }
+    
+
+    for (let i = 1; i <= number; i++) {
+        
+        if (i === number) {
+            return number * result
+
+        }
+        result = i * result
+    }
+}
+    console.log(fattorialeNonRicorsivo(5));
