@@ -118,18 +118,25 @@ changeage(50,myAccount)
 
 console.log(myAccount.user.age);
 
+let pippo =  {name: "pippo", city: "topolinia"};
+
+let pippo1 = pippo;
+
+let pippo2 = {name: "pippo", city: "topolinia"};
 
 
 
+console.log(pippo === pippo2);
+
+const age = 5; 
+
+const name1 = "osvaldo";
+
+let baby = {age, name: name1};
 
 
 
-
-
-
-
-
-
+console.log(baby);
 
 
 

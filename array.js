@@ -257,7 +257,7 @@ function doubleFirstElement(array) {
         
     // }
     let tempArray = [...array]
-    
+
     tempArray[0] = tempArray[0] * 2;
 
     return tempArray;
@@ -269,4 +269,25 @@ let newarray = doubleFirstElement(array5)
 console.log(array5);
 
 console.log(newarray);
+
+let finalArray = [23, 13, 5, 12];
+
+// function sumFirst4ElementsOfArray(array) {
+//     return array[0] + array[1] + array[2] + array[3]
+// }
+
+function sumFirst4ElementsOfArray([el0, el1, el2, el3]) {
+    return el0 + el1 + el2 + el3;
+}
+
+let lastElement = {value: 3, nextelement:null}
+
+let secondElement = {value: 7, nextelement:lastElement}
+
+let firstElement = {value: 5, nextelement:secondElement}
+
+
+console.log(firstElement.value, firstElement.nextelement.value, firstElement.nextelement.nextelement.value);
+
+
 
