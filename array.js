@@ -151,42 +151,122 @@
 
 
 // primo esercizio di compito
+function range(start, end, step = 1) {
 
+    let array1 = []
+    let inizio = step > 0 ? start : end;
 
+    let fine;
 
-function range(start, end) {
+    if (step > 0) {
+        fine = end
+    } else {
+        fine = start
+    }
+    for (let i = start; i <= end; i += step) {
 
-    let somma = 0;
-
-    for (let i = start; i <= end; i++) {
-
-        somma = somma + i
+        array1.push(i)
     }
 
-    console.log(somma);
+    return array1
 
 }
 
-console.log(range(-1, 10))
+console.log(range(0, 10))
+
+function sum(...numbers) {
+
+    let result = numbers[0]
+
+    for (let i = 1; i < numbers.length; i++) {
+        // const element = numbers[i];
+        result += numbers[i];
+    }
+    return result;
+}
+
+console.log("somma", sum(...range(5)));
+
+
+// function range(start, end, step = 1) {
+
+//     let somma = 0;
+
+//     for (let i = start; i <= end; i+= step) {
+
+//         somma = somma + i
+//     }
+
+//     console.log(somma);
+
+// }
+
+// console.log(range(-1, 10))
 
 // secondo esercizio di compito
 
-let arrayoriginal = [1, 2, 3, 4, 5];
+// let arrayoriginal = [1, 2, 3, 4, 5, 6];
 
-function arrayReverse(arrayoriginal) {
+// function arrayReverse(arrayoriginal) {
 
-    let arrayReversed = [];
+//     let arrayReversed = [];
 
-    for (let i = arrayoriginal.length; i >= 0; i--) {
-        arrayReversed.push(i);
+//     // for (let i = arrayoriginal.length - 1; i >= 0; i--) {
 
-    }
-    return arrayReversed;
+//     //     arrayReversed.push(arrayoriginal[i]);
+
+//     // }
+
+//     for (const number of arrayoriginal) {
+//         arrayReversed.unshift(number)
+//     }
+//     return arrayReversed;
+// }
+
+// let reverseArray = arrayReverse(arrayoriginal);
+
+// console.log(reverseArray);
+
+// function reverseInPlace(arrayoriginal) {
+//     // arrayoriginal= arrayReverse(arrayoriginal);
+//     for (let i = 0; i < arr.length / 2; i++) {
+//         const headelement = arr[i];
+//         const tailelement = arr[arr.length - 1 - i];
+
+//         // let temp = headelement
+//         // headelement = tailelement
+//         // tailelement = temp   
+//         let temp = arr[i]
+//         arr[i]= arr[arr.length - 1 -i]
+//         arr[arr.length - 1 -i] = temp
+//     }
+// }
+
+// reverseInPlace(arrayoriginal)
+
+// console.log("in place", arrayoriginal);
+
+let array5 = [7, 4, 100, 12];
+
+function doubleFirstElement(array) {
+    
+    // let tempArray = []
+    
+    // for (let i = 0; i < array.length; i++) {
+    //     tempArray.push(array[i])
+        
+    // }
+    let tempArray = [...array]
+    
+    tempArray[0] = tempArray[0] * 2;
+
+    return tempArray;
+
 }
 
-let reverseArray = arrayReverse(arrayoriginal);
+let newarray = doubleFirstElement(array5)
 
-console.log(reverseArray);
+console.log(array5);
 
-
+console.log(newarray);
 

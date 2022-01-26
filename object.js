@@ -60,6 +60,78 @@
 
 
 
+// let firstNumber=5
+
+// function addOne(number){
+//     number = number + 1
+//     return number;
+// }
+
+// let secondNumber = addOne(firstNumber)
+
+// console.log(secondNumber);
+
+
+// let myAccount = {name: "Andre", surname: "Asioli", balance: 100}
+
+
+// function addMoneys(moneyToAdd, account) {
+//     // let tempAccount={};
+//     // tempAccount = Object.assign(tempAccount, account) 
+//     // tempAccount.balance = tempAccount.balance + moneyToAdd;
+//     // return tempAccount
+//     let tempAccount={...account}
+//     tempAccount.balance = tempAccount.balance + moneyToAdd;
+//     return tempAccount
+// }
+
+// let updateAccount= addMoneys(50,myAccount)
+// console.log(myAccount);
+// console.log(updateAccount);
+
+let userAndrea = {name: "Andrea Asioli", age: 43}
+
+let myAccount = {user: userAndrea, balance: 100}
+
+
+
+function changeage(newage, account) {
+    // let tempAccount={};
+    // tempAccount = Object.assign(tempAccount, account) 
+    // tempAccount.balance = tempAccount.balance + moneyToAdd;
+    // return tempAccount
+    let tempAccount = JSON.parse (JSON.stringify(account));
+
+    tempAccount.user.age = newage;
+    return tempAccount
+}
+
+let updateAccount= changeage(50,myAccount)
+console.log(myAccount);
+console.log(updateAccount);
+
+function changeage(newage, account) {
+    account.user.age = newage
+}
+
+changeage(50,myAccount)
+
+console.log(myAccount.user.age);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
