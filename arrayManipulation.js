@@ -362,4 +362,4 @@ function reduce(arrayToAggregate, aggregationFunction, startingElement) {
 
 console.log(testArray3.reduce(sumEvenIndexStr));
 
-console.log(testArray3.reduce((previous, current, index, array) => index % 2 === 0 ? previous + " " + current: previous));
+console.log(testArray3.reduce((previous, current, index, array) => index % 2 === 0 ? previous + " " + current : previous));
