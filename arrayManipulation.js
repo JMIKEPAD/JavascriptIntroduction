@@ -283,7 +283,7 @@ function product(previous, current, index) {
 
 function sumEvenIndex(previous, current, index) {
     if (index % 2 === 0) {
-        return previous +  current;
+        return previous + current;
     } else {
         return previous
     }
@@ -320,11 +320,11 @@ console.log(reduce(testArray1, sum, 100));
 
 console.log(reduce(testArray1, sumEvenIndex));
 
-console.log(testArray1.reduce((previous, current, index, array) => previous + current,0));
+console.log(testArray1.reduce((previous, current, index, array) => previous + current, 0));
 
 
 
-let testArray3 =["la","vergogna", "casa","dannazione", "ha", "pippo","preso", "secchio", "fuoco"];
+let testArray3 = ["la", "vergogna", "casa", "dannazione", "ha", "pippo", "preso", "secchio", "fuoco"];
 
 //console.log(testArray3.reduce((array,indice) => ));
 
@@ -343,18 +343,18 @@ function reduce(arrayToAggregate, aggregationFunction, startingElement) {
     let startingIndex;
 
     if (startingElement !== undefined) {
-        
+
         result = startingElement;
     } else {
         result = arrayToAggregate[0]
         startingIndex = 1
     }
     for (let i = startingIndex; i < arrayToAggregate.length; i++) {
-    const element = arrayToAggregate[i];
+        const element = arrayToAggregate[i];
 
         result = aggregationFunction(result, element, i);
 
-        
+
     }
 
     return result
@@ -367,51 +367,71 @@ console.log(testArray3.reduce(sumEvenIndexStr));
 console.log(testArray3.reduce((previous, current, index, array) => index % 2 === 0 ? previous + " " + current : previous));
 
 
+let testArray5 = ["Pippo", "Pluto", "Paperino", "Topolino", "Paperone", "Paperoga"];
+
+function switchCase(string) {
+
+    const firstChar = string[0];
+
+    const firstCharLower = firstChar.toLowerCase();
+
+    const remainingString = string.substring(1);
+
+    const remainingStringUpper = remainingString.toUpperCase()
+
+    return firstCharLower + remainingStringUpper
+}
+
+console.log(testArray5.map(switchCase));
+
+
+console.log(testArray5.map((s) => s[0].toLowerCase() + s.substring(1).toUpperCase()));
+
+
+console.log(testArray5.reduce((p,c) => [...p, switchCase(c)], [] ));
+
+
+function checkIfContainsR(string) {
+    if (string.includes("r")) {
+        return true
+    } else {
+        return false
+    }
+}
+console.log(testArray5.filter(checkIfContainsR));
+
+console.log(testArray5.filter((s) => s.includes("r")));
+
+console.log(testArray5.reduce((p,c) => checkIfContainsR(c) ? [...p,c] : p, [] ) );
 
 
 
+function checkIfContainsString(string, stringTocheck) {
+ return string.toLowerCase().includes(stringTocheck);
+}
+
+
+console.log(testArray5.filter(checkIfContainsString));
+
+console.log(testArray5.filter((s) => checkIfContainsString(s,"p")));
 
 
 
+   function checkIfContainsString2( stringTocheck) {
+    return (string) => string.toLowerCase().includes(stringTocheck);
+   }
 
 
+const checkR = checkIfContainsString2("r");
 
 
+console.log(checkR("pippo"));
 
+const checkP = checkIfContainsString2("p");
 
+console.log(checkP("pippo"));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(testArray5.filter(checkIfContainsString2("p")));
 
 
 
